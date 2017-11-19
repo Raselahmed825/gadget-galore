@@ -1,0 +1,99 @@
+
+
+/*button config*/
+
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.home{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.create{
+    background-color: red;
+   
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.Edit{
+    background-color: red;
+   
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+.view{
+    background-color: red;
+   
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: grey; 
+    color: black;
+}
+
+.home:hover {
+    background-color: grey; 
+    color: black;
+}
+.edit:hover {
+    background-color: grey; 
+    color: black;
+}
+.view:hover {
+    background-color: grey; 
+    color: black;
+}
+.create:hover {
+    background-color: grey; 
+    color: black;
+}
+
+
+
+/* box  */
+.Entry{
+    color: blue;
+     box-shadow: 10px 10px 5px #888888;
+     width: 500px;
+     display: inline-block;
+
+}
+

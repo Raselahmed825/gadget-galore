@@ -1,9 +1,26 @@
 <html>
     <head>
         <title>Create Arctile</title>
+       <link href="/css/Admin_Style.css" rel="stylesheet" type"text/css">
+         
     </head>
     <body>
-        <h1>New Product</h1>
+          <br>
+        <br>
+       <hr>
+        <div>
+        <button class="home">Home</button>
+        <button class="Create">Create</button>
+        <button class="Edit">Edit</button>
+        <button class="View">View</button>
+       
+        
+        </div>
+        <hr>
+   <br>
+       
+        <h2>Add New product</h2>
+        <div class="Entry">
         <div>Name:
             <input type="text" id="name"/>
         </div> <br>
@@ -20,7 +37,7 @@
         <div id="error"></div>
         
         <button id="submit">Submit</button>
-        
+        </div>
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
             var product = {title: "", content: ""};
