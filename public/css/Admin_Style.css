@@ -15,7 +15,7 @@
 }
 
 .home{
-    background-color: red;
+    background-color: #FF5733  ;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -27,7 +27,7 @@
 }
 
 .create{
-    background-color: red;
+    background-color: #FF5733  ;
    
     border: none;
     color: white;
@@ -40,7 +40,7 @@
 }
 
 .Edit{
-    background-color: red;
+    background-color: #FF5733  ;
    
     border: none;
     color: white;
@@ -52,7 +52,7 @@
     transition-duration: 0.4s;
 }
 .view{
-    background-color: red;
+    background-color: #FF5733  ;
    
     border: none;
     color: white;
@@ -65,24 +65,24 @@
 }
 
 .button:hover {
-    background-color: grey; 
+    background-color: #FFC300  ; 
     color: black;
 }
 
 .home:hover {
-    background-color: grey; 
+    background-color: #FFC300  ; 
     color: black;
 }
 .edit:hover {
-    background-color: grey; 
+    background-color: #FFC300  ; 
     color: black;
 }
 .view:hover {
-    background-color: grey; 
+    background-color: #FFC300  ; 
     color: black;
 }
 .create:hover {
-    background-color: grey; 
+    background-color: #FFC300  ; 
     color: black;
 }
 
@@ -96,4 +96,84 @@
      display: inline-block;
 
 }
+
+body{
+  margin: 0 auto;
+  background-image: url("/images/EE.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 720px;
+}
+
+
+#transparentbox{
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(52,73,94,0.7);
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+
+#transparentbox2{
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(52,73,94,0.7);
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 150px;
+
+}
+
+#transparentbox2 img {
+   width: 120px;
+   height: 120px;
+   margin-top: -60px;
+   margin-bottom: 30px;
+
+}
+
+input{
+  height: 45px;
+  width: 300px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding-left: 40px;
+
+}
+/*input [type="password"]{
+  height: 45px;
+  width: 300px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding-left: 40px;
+}
+*/
+.form-input::before{
+  /*content: "/f007";*/
+  position: absolute;;
+  font-family: "ariel";
+  padding-left: 5px;
+  padding-top: 7px;
+  color: #985986;
+  font-size: 30px;
+}
+
+.form-input:last-child(2)::before{
+  content: "/f023";
+}
+
+.btn-login{
+  padding: 15px 30px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+}
+
 

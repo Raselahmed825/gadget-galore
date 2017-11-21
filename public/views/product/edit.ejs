@@ -9,18 +9,20 @@
         <br>
        <hr>
         <div>
-        <button class="home">Home</button>
-        <button class="Create">Create</button>
-        <button class="Edit">Edit</button>
-        <button class="View">View</button>
+        <button class="home"><a href="/products/all">Home</button></a>
+        <button class="Create"><a href="/products/new">Create</button></a>
+        <button class="Edit"><a href="/products/edit">Edit</button></a>
+        <button class="View"><a href="/products/view">View</button></a>
+       
        
         
         </div>
     <hr>
     <br>
     
-        <h1>Edit Product</h1>
-         <div class="Entry">
+       
+         <div id="transparentbox">
+              <h1 style="font-size:22px; color:white;">Edit Product</h1>
         <div>Name:
             <input type="text" id="name" value="<%=request.product.name%>" />
         </div> <br>
@@ -34,7 +36,7 @@
         <div>Quantity:
             <input type="number" id="quantity" value=<%=request.product.quantity%> />
         </div> <br>
-        <button id="submit">Submit</button>
+        <button id="submit" class="btn-login">Submit</button>
         </div>
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
