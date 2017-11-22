@@ -10,9 +10,6 @@
        <hr>
         <div>
         <button class="home"><a href="/products/all">Home</button></a>
-        <button class="Create"><a href="/products/new">Create</button></a>
-        <button class="Edit"><a href="/products/edit">Edit</button></a>
-        <button class="View"><a href="/products/view">View</button></a>
        
        
         
@@ -26,6 +23,12 @@
         <div>Name:
             <input type="text" id="name"/>
         </div> <br>
+        <div>Type:
+            <input type="text" id="type"/>
+        </div> <br>
+        <div>Brand:
+            <input type="text" id="brand"/>
+        </div> <br>
         <div>Description:
             <textarea id="description"></textarea>
         </div> <br>
@@ -34,6 +37,9 @@
         </div> <br>
         <div>Quantity:
             <input type="number" id="quantity"/>
+        </div> <br>
+        <div>Image URL:
+            <input type="text" id="image"/>
         </div> <br>
         
         <div id="error"></div>
@@ -47,6 +53,14 @@
                 product.name = $("#name").val();
             });
             
+            $("#type").change(function(){
+                product.type = $("#type").val();
+            });
+            
+            $("#brand").change(function(){
+                product.brand = $("#brand").val();
+            });
+            
             $("#description").change(function(){
                 product.description = $("#description").val();
             });
@@ -57,6 +71,10 @@
             
             $("#quantity").change(function(){
                 product.quantity = $("#quantity").val();
+            });
+            
+            $("#image").change(function(){
+                product.imageURL = $("#image").val();
             });
             
             

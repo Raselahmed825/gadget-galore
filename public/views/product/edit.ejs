@@ -11,8 +11,6 @@
         <div>
         <button class="home"><a href="/products/all">Home</button></a>
         <button class="Create"><a href="/products/new">Create</button></a>
-        <button class="Edit"><a href="/products/edit">Edit</button></a>
-        <button class="View"><a href="/products/view">View</button></a>
        
        
         
@@ -27,6 +25,14 @@
             <input type="text" id="name" value="<%=request.product.name%>" />
         </div> <br>
         
+        <div>Type:
+            <input type="text" id="type" value="<%=request.product.type%>" />
+        </div> <br>
+        
+        <div>Brand:
+            <input type="text" id="brand" value="<%=request.product.brand%>" />
+        </div> <br>
+        
         <div>Description:
             <textarea id="description"> <%=request.product.description%> </textarea>
         </div> <br>
@@ -35,6 +41,9 @@
         </div> <br>
         <div>Quantity:
             <input type="number" id="quantity" value=<%=request.product.quantity%> />
+        </div> <br>
+        <div>Image URL:
+            <input type="text" id="image" value="<%=request.product.imageURL%>" />
         </div> <br>
         <button id="submit" class="btn-login">Submit</button>
         </div>
@@ -47,6 +56,14 @@
                 product.name = $("#name").val();
             });
             
+            $("#type").change(function(){
+                product.type = $("#type").val();
+            });
+            
+            $("#brand").change(function(){
+                product.brand = $("#brand").val();
+            });
+            
             $("#description").change(function(){
                 product.description = $("#description").val();
             });
@@ -57,6 +74,10 @@
             
             $("#quantity").change(function(){
                 product.quantity = $("#quantity").val();
+            });
+            
+            $("#image").change(function(){
+                product.imageURL = $("#image").val();
             });
             
             $("#submit").click(function(){

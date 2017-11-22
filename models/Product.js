@@ -8,6 +8,20 @@ var ProductSchema = {
     trim: true,
     required: 'Name required'
   },
+  
+  type: {
+    type: String,
+    default: '',
+    trim: true,
+
+  },
+  
+  brand: {
+    type: String,
+    default: '',
+    trim: true,
+
+  },
 
   description: {
     type: String,
@@ -28,6 +42,11 @@ var ProductSchema = {
     type: Number,
     default: '',
     required: 'Quantity required'
+
+  },
+  imageURL: {
+    type: String,
+    default: '',
 
   },
 
