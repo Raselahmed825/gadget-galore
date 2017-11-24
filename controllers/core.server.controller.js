@@ -23,3 +23,17 @@ exports.cart = function(req, res) {
 		request: req
 	});
 };
+
+exports.products = function(req, res) {
+	res.render('./../public/views/Products.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+
+exports.confirmation = function(req, res) {
+	res.render('./../public/views/confirmation.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
