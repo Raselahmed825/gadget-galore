@@ -125,8 +125,10 @@ nav a:hover {
 /*slider*/
 #slider {
   width: 100%;
-  max-width: 110%;
+  max-width: 100%;
+  height: auto;
   float: right;
+  overflow: hidden;
 }
 .bx-viewport {
   margin-top: -4;
@@ -389,4 +391,17 @@ nav a:hover {
     margin: 0 auto;
     margin-top: 10px;
 
+}
+
+
+
+/*meun bar */
+
+.menu-togglr {
+   color: white;
+   position: absolute;
+   top: 70px;
+   left: 20px;
+   font-size: 20px;
+   display: none;
 }

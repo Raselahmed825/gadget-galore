@@ -21,6 +21,34 @@
     .search-area {width: 350px; height: 40px;}
     .search-btn {height: 40px;}
     #user-menu li{margin-top: 15px;}
+    
+    .menu-togglr{
+        display: block;
+    }
+    
+    #navigation{
+        height: auto;
+        width:  100%;
+        margin: 0 auto;
+    }
+    
+    #navigation nav{
+        float: none;
+        margin:  0 auto;
+        width: 100%;
+    }
+    
+    #mainav a{
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid black;
+        margin: 0 !important;
+        padding: 10px;
+    } 
+    
+    #mainav {
+        display: none;
+    }
 }
 
 @media screen and (max-width:480px){
