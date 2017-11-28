@@ -17,8 +17,8 @@
         <hr>
         <br>
         
-        <div id="transparentbox">
-        <h1 style="font-size:42px; color:white;">Product</h1>
+        <div id="transparentbox3">
+        <h1 style="font-size:42px; color:white;"><u>Product</u></h1>
         <% console.log(request.product) %>
         <h2 style="font-size:25px; color:white;"> Name: <%= request.product.name %></h2>
         <h2 style="font-size:25px; color:white;"> Type: <%= request.product.type %></h2>
@@ -26,7 +26,7 @@
         <h2 style="font-size:25px; color:white;">Description: <%= request.product.description %> </h2>
         <h4 style="font-size:25px; color:white;">Price: <%= request.product.price %></h4>
         <h4 style="font-size:25px; color:white;">Quantity: <%= request.product.quantity %></h4>
-        <h4 style="font-size:25px; color:white;">image URL: <%= request.product.imageURL %></h4>
+        <h4 style="font-size:25px; color:white;">Image URL: <%= request.product.imageURL %></h4>
         <button class="Edit"><a href="/products/edit/<%= request.product._id %>">Edit</button></a>
         
           </div>

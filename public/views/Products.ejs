@@ -3,7 +3,9 @@
 <head>
   <title>Gadget Galore</title>
   <link href="/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+  <link href="/css/fa/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet" type"text/css">
+  <link href="/css/media.css" rel="stylesheet">
 </head>
 
 <body>
@@ -12,7 +14,7 @@
       <div id="subheader">
         <div class="container">
           <p>Bringing The Very Best To Your Life</p>
-          <a href="#">About</a><a href="#">Help</a><a href="index.html">Home</a>
+          <a href="#">Help</a><a href="./views/index.ejs">Home</a>
         </div>
       </div>
        <!--==main header==-->
@@ -30,17 +32,17 @@
           </div>
           <!--==user-menu==-->
           <div id="user-menu">
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="/cart">Cart</a></li>
           </div>
        </div>
     </div>
     <!--==navigation bar==-->
     <div id="navigation">
-      <nav>
-        <a href="#">Mobile</a>
-        <a href="#">Laptop/Computer</a>
-        <a href="#">Gamming</a>
+      <a href="#" class="menu-togglr"><i class="fa fa-bars"></i> </a>
+      <nav id="mainav">
+        <a href="/products">Mobile</a>
+        <a href="/products">Laptop/Computer</a>
+        <a href="/products">Gamming</a>
       </nav>
     </div>
 
@@ -49,8 +51,31 @@
     <div id= "heading-block">
       <h3>Products</h3>
     </div>
+    
     <div class="prod-container">
-      <!--- fist product--->
+      <% for(var i=0; i<products.length; i++) { %>
+      <div class="prod-box">
+        
+        
+           
+            
+            
+        
+        <img src="images/airpods1.jpg" alt="Airpods"   >
+        <div class="prod-trans">
+          <div class= "prod-feature">
+            <p><h1> <%= products[i].name %> </h1></p>
+            <p>
+              <h1> <%= products[i].price %> </h1>
+            </p>
+            
+            <input type="button" value ="Add to cart" />
+          </div>
+        </div>
+      </div>
+      <% } %>
+     
+      <!--- fist product
       <div class="prod-box">
         <img src="images/airpods1.jpg" alt="Airpods"   >
         <div class="prod-trans">
@@ -64,7 +89,7 @@
         </div>
       </div>
 
-      <!--- Second product--->
+      <!--- Second product
       <div class="prod-box">
         <img src="images/case.jpg" alt="Case"   >
         <div class="prod-trans">
@@ -78,7 +103,7 @@
         </div>
       </div>
 
-      <!--- third product--->
+      <!--- third product
       <div class="prod-box">
         <img src="images/charger.jpg" alt="Charger Set"   >
         <div class="prod-trans">
@@ -92,7 +117,7 @@
         </div>
       </div>
 
-      <!--- fourth product--->
+      <!--- fourth product
       <div class="prod-box">
         <img src="images/charger1.jpg" alt="Charger"   >
         <div class="prod-trans">
@@ -106,7 +131,7 @@
         </div>
       </div>
 
-      <!--- fifth product--->
+      <!--- fifth product
       <div class="prod-box">
         <img src="images/Drdre.jpg" alt="Dr Dre"   >
         <div class="prod-trans">
@@ -120,7 +145,7 @@
         </div>
       </div>
 
-      <!--- sixth product--->
+      <!--- sixth product
       <div class="prod-box">
         <img src="images/Wireless.jpg" alt="Wireless charging"   >
         <div class="prod-trans">
@@ -134,12 +159,8 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-<!------------------------>
+    --->
+ <!--==footer==-->
   <div id="footer">
     <div class="container">
       <div class="footer_sub_1">
@@ -151,12 +172,10 @@
       </div>
       <div class="footer_sub_2">
         <center>
-          <h2>Follow us on</h2>
+          <h2> &nbsp; &nbsp; &nbsp; Follow us on</h2>
           <ul>
             <li><a href="#">Facebook</a></li>
-            <li><a href="#">Google+</a></li>
             <li><a href="#">Twitter</a></li>
-            <li><a href="#">Youtube</a></li>
             <li><a href="#">Instagram</a></li>
           </ul>
         </center>
@@ -173,13 +192,9 @@
     </div>
   </div>
 
-  <script
-			  src="http://code.jquery.com/jquery-2.2.4.js"
-			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-			  crossorigin="anonymous">
-  </script>
-  <script src="js/jquery.bxslider.min.js"></script>
-  <script src="js/my.js"></script>
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="./js/jquery.bxslider.min.js"></script>
+  <script src="./js/my.js"></script>
 </body>
 
 </html>

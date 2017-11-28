@@ -29,6 +29,8 @@ var OrderSchema = {
     trim: true,
     required: 'mailID required'
   },
+  
+  products: [],
 
   user: {
     type: Schema.ObjectId,

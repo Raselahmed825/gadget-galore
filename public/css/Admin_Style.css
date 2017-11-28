@@ -99,9 +99,9 @@
 
 body{
   margin: 0 auto;
-  background-image: url("/images/EE.jpg");
+  background-image: url("/images/iu.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 720px;
+  background-size: 100% 100%;
 }
 
 
@@ -132,6 +132,18 @@ body{
    height: 120px;
    margin-top: -60px;
    margin-bottom: 30px;
+
+}
+
+#transparentbox3{
+    width: 500px;
+    height: auto;
+    text-align: center;
+    background-color: rgba(52,73,94,0.6);
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 10px;
+   
 
 }
 
@@ -176,4 +188,24 @@ input{
   border-bottom: 4px solid #27AE60;
 }
 
+/*Styling links*/
 
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:active{
+    color: yellow;
+}
+
+a:hover{
+    background-color: rgba(11,121,100,1);
+}
+
+a:visited{
+    
+    color: white;
+    
+}

@@ -58,7 +58,7 @@
   margin-left: 50px;
 }
 .search-area {
-  width: 650px;
+  width: 600px;
   height:50px;
   background: white;
   border: none;
@@ -73,7 +73,7 @@
   border: none;
   color: white;
   background: brown;
-  margin-left: -100px;
+  margin-left: -150px;
 }
 /*this is for user menu style*/
 #user-menu {
@@ -381,19 +381,106 @@ nav a:hover {
 
 /*Confirmation div*/
 
-
-#transparentbox{
+#transparentbox3{
     width: 500px;
-    height: 400px;
+    height: auto;
     text-align: center;
-    background-color: rgba(52,73,94,0.7);
+    background-color: rgba(52,73,94,1);
     border-radius: 4px;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 100px;
+  
 
 }
 
 
+/*Styling button*/
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+/*Styling links*/
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:active{
+    color: yellow;
+}
+
+
+
+a:visited{
+    
+    color: white;
+    
+}
+
+/*input form styling*/
+input{
+  height: 45px;
+  width: 300px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding-left: 40px;
+
+}
+.form-input::before{
+  /*content: "/f007";*/
+  position: absolute;;
+  font-family: "ariel";
+  padding-left: 5px;
+  padding-top: 7px;
+  color: #985986;
+  font-size: 30px;
+}
+
+
+.form-input:last-child(2)::before{
+  content: "/f023";
+}
 
 /*meun bar */
 

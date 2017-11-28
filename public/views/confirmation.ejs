@@ -12,7 +12,7 @@
       <div id="subheader">
         <div class="container">
           <p>Bringing The Very Best To Your Life</p>
-          <a href="#">About</a><a href="#">Help</a><a href="index.html">Home</a>
+          <a href="#">About</a><a href="#">Help</a><a href="/index">Home</a>
         </div>
       </div>
        <!--==main header==-->
@@ -30,7 +30,7 @@
           </div>
           <!--==user-menu==-->
           <div id="user-menu">
-            <li><a href="#">Cart</a></li>
+            <li><a href="/Cart">Cart</a></li>
             <li><a href="#">Login</a></li>
           </div>
        </div>
@@ -43,22 +43,34 @@
         <a href="#">Gamming</a>
       </nav>
     </div>
+    <br>
 
 <!----==Comfirmation list==---->
 
- <div id="transparentbox">
-     
-     <h1>Confirmation</h1>
-     
-     
-     
-     
-     
-     
- </div>
+<div id="transparentbox3">
+  
+             <h2 style="font-size:42px; color:white;"><u>Confirmation</u></h2>
+        <div>Name:
+            <input type="text" id="name"/>
+        </div> <br>
+        <div>Phone Number:
+            <input type="number" id="number"/>
+        </div> <br>
+        <div>Address:
+            <textarea rows="4" cols="50" id="description"></textarea>
+        </div> <br>
+        <div>Quantity:
+            <input type="number" id="quantity"/>
+        </div> <br>
+        
+        <div id="error"></div>
+        
+        <button id="submit" class="button"><span>Submit</span></button>
+        <button id="submit" class="button">Cancel</button>
+        </div>
  
  
- 
+ <br>
  
  
  
@@ -93,7 +105,7 @@
           <form>
             <textarea class="sub" name="feedback" placeholder="Type here"></textarea>
             <br/>
-            <input type="submit" value="Submit"/>
+            <input class="button" type="submit" value="Submit"/>
           </form>
           <p><a href="mailto:wajid0194696@gmail.com">Click here to mail us<a/></p>
       </div>
