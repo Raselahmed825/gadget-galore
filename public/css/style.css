@@ -201,7 +201,8 @@ nav a:hover {
     float: left;
 }
 .prod-box>img{
-    width: 100%;
+    width: 250px;
+    height: 300px;
 }
 
 .prod-trans{
@@ -504,4 +505,26 @@ input{
    left: 20px;
    font-size: 20px;
    display: none;
+}
+
+
+/*Tab for help*/
+#transparentbox4{
+    width: 800px;
+    height: auto;
+    text-align: center;
+    background-color: rgba(52,73,94,.6);
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+
+}
+.tab{
+  background-color: #f4511e;
+  width: 180px;
+  height: auto;
+  border: 4px solid #f4511e;
+  display: inline-block;
+
 }

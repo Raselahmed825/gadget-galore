@@ -42,7 +42,7 @@
       <nav id="mainav">
         <a href="/products">Mobile</a>
         <a href="/products">Laptop/Computer</a>
-        <a href="/products">Gamming</a>
+        <a href="/products">Gaming</a>
       </nav>
     </div>
 
@@ -61,12 +61,12 @@
         <img src="<%= products[i].imageURL %>" alt="Airpods"   >
         <div class="prod-trans">
           <div class= "prod-feature">
-            <p><h1> <%= products[i].name %> </h1></p>
+            <p> <%= products[i].name %> </p>
             <p>
-              <h1> <%= products[i].price %> </h1>
+               <%= products[i].price %> 
             </p>
             
-            <input type="button" value ="Add to cart" />
+            <input class="button2" type="button" value ="Add to cart" />
           </div>
         </div>
       </div>

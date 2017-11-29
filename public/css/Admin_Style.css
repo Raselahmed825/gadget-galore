@@ -209,3 +209,16 @@ a:visited{
     color: white;
     
 }
+
+
+/*Dropbox Styling*/
+
+.dropbox{
+      position: relative;
+      font-family: "ariel";
+      padding-left: 5px;
+      color: #000000;
+      font-size: 20px;
+      height: 40px;
+  
+}
