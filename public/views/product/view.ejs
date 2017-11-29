@@ -27,8 +27,27 @@
         <h4 style="font-size:25px; color:white;">Price: <%= request.product.price %></h4>
         <h4 style="font-size:25px; color:white;">Quantity: <%= request.product.quantity %></h4>
         <h4 style="font-size:25px; color:white;">Image URL: <%= request.product.imageURL %></h4>
-        <a href="/products/edit/<%= request.product._id %>"><button class="Edit">Edit</button></a>
-        <a href="/products/all"><button class="Edit">Delete</button></a>
+        <a href="/products/edit/<%= request.product._id %>"><button class="edit">Edit</button></a>
+        <button id="del">Delete</button>
+        
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script>
+            var productID = <%- JSON.stringify(request.product._id) %>;
+            
+            $("#del").click(function(){
+                $.ajax({
+                    method: "DELETE",
+                    url: "/api/products/"+productID,
+                    //data: product
+                }).done(function(response){
+                    console.log(response);
+                    window.location.replace("/products/all");
+                }).fail(function(response){
+                    $("#error").text(JSON.parse(response.responseText).message);
+                    console.log(JSON.parse(response.responseText).message);  
+                });
+            });
+        </script>
         
           </div>
     </body>

@@ -39,7 +39,7 @@
     transition-duration: 0.4s;
 }
 
-.Edit{
+.edit, #del{
     background-color: #FF5733  ;
    
     border: none;
@@ -73,7 +73,7 @@
     background-color: #FFC300  ; 
     color: black;
 }
-.edit:hover {
+.edit:hover, #del:hover {
     background-color: #FFC300  ; 
     color: black;
 }
