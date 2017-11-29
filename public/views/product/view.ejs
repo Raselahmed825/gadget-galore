@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Arctile</title>
+        <title>View Product</title>
      <link href="/css/Admin_Style.css" rel="stylesheet" type"text/css">
          
     </head>
@@ -9,8 +9,8 @@
         <br>
        <hr>
         <div>
-        <button class="home"><a href="/products/all">Home</button></a>
-        <button class="Create"><a href="/products/new">Create</button></a>
+         <a href="/products/all"><button class="home">Home</button></a>
+       <a href="/products/new"> <button class="create">Create</button></a>
        
         
         </div>
@@ -27,7 +27,8 @@
         <h4 style="font-size:25px; color:white;">Price: <%= request.product.price %></h4>
         <h4 style="font-size:25px; color:white;">Quantity: <%= request.product.quantity %></h4>
         <h4 style="font-size:25px; color:white;">Image URL: <%= request.product.imageURL %></h4>
-        <button class="Edit"><a href="/products/edit/<%= request.product._id %>">Edit</button></a>
+        <a href="/products/edit/<%= request.product._id %>"><button class="Edit">Edit</button></a>
+        <a href="/products/all"><button class="Edit">Delete</button></a>
         
           </div>
     </body>
