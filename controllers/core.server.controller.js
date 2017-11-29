@@ -37,3 +37,10 @@ exports.confirmation = function(req, res) {
 		request: req
 	});
 };
+
+exports.help = function(req, res) {
+	res.render('./../public/views/help.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};

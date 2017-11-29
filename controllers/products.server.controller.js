@@ -44,6 +44,27 @@ exports.new = function(req, res){
   });
 };
 
+exports.products = function(req, res){
+  Product.find(function(err, data) {
+    if (err) {
+      return res.status(400).send({
+
+  				message: errorHandler.getErrorMessage(err)
+  			});
+    } else {
+      console.log("api called");
+      console.log(data);
+
+        res.render('./../public/views/Products.ejs', {
+          user: req.user || null,
+          request: req,
+          products: data
+        });
+    }
+  });
+  
+};
+
 
 
 

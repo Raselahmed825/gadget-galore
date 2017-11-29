@@ -7,6 +7,6 @@ module.exports = function(app) {
 	app.route('/about').get(core.about);
 	
 	app.route('/cart').get(core.cart);
-	app.route('/products').get(core.products);
+	//app.route('/products').get(core.products);
 	app.route('/confirmation').get(core.confirmation);
 };

@@ -3,6 +3,9 @@ module.exports = function(app){
  var products = require('./../controllers/products.server.controller.js');
  var users = require('./../controllers/users.server.controller.js');
 
+app.route('/products')
+    .get(products.products);
+    
  app.route('/products/new')
     .get(products.new);
     
@@ -14,6 +17,8 @@ module.exports = function(app){
     
  app.route('/products/edit/:productId')
     .get(products.edit);
+    
+ 
  
  app.route('/api/products')
 	.get(products.list)
