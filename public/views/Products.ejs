@@ -52,6 +52,8 @@
       <h3>Products</h3>
     </div>
     
+    
+     <!--- product list  --->
     <div class="prod-container">
       <% for(var i=0; i<products.length; i++) { %>
       <div class="prod-box">
@@ -65,97 +67,12 @@
                <%= products[i].price %> 
             </p>
             
-            <input class="button2" type="button" value ="Add to cart" />
+            <input id="<%=i%>" class="button2 cartbtn" type="button" value ="Add to cart" />
           </div>
         </div>
       </div>
       <% } %>
-     
-      <!--- fist product
-      <div class="prod-box">
-        <img src="images/airpods1.jpg" alt="Airpods"   >
-        <div class="prod-trans">
-          <div class= "prod-feature">
-            <p>Airpods</p>
-            <p>
-              Price: 900Sr
-            </p>
-            <input type="button" value ="Add to cart" />
-          </div>
-        </div>
-      </div>
-
-      <!--- Second product
-      <div class="prod-box">
-        <img src="images/case.jpg" alt="Case"   >
-        <div class="prod-trans">
-          <div class= "prod-feature">
-            <p>Case</p>
-            <p>
-              Price: 150Sr
-            </p>
-            <input type="button" value ="Add to cart" />
-          </div>
-        </div>
-      </div>
-
-      <!--- third product
-      <div class="prod-box">
-        <img src="images/charger.jpg" alt="Charger Set"   >
-        <div class="prod-trans">
-          <div class= "prod-feature">
-            <p>Charger Set</p>
-            <p>
-              Price: 300Sr
-            </p>
-            <input type="button" value ="Add to cart" />
-          </div>
-        </div>
-      </div>
-
-      <!--- fourth product
-      <div class="prod-box">
-        <img src="images/charger1.jpg" alt="Charger"   >
-        <div class="prod-trans">
-          <div class= "prod-feature">
-            <p>Mini Charger</p>
-            <p>
-              Price: 150Sr
-            </p>
-            <input type="button" value ="Add to cart" />
-          </div>
-        </div>
-      </div>
-
-      <!--- fifth product
-      <div class="prod-box">
-        <img src="images/Drdre.jpg" alt="Dr Dre"   >
-        <div class="prod-trans">
-          <div class= "prod-feature">
-            <p>Dr Dre Earphones</p>
-            <p>
-              Price: 1200Sr
-            </p>
-            <input type="button" value ="Add to cart" />
-          </div>
-        </div>
-      </div>
-
-      <!--- sixth product
-      <div class="prod-box">
-        <img src="images/Wireless.jpg" alt="Wireless charging"   >
-        <div class="prod-trans">
-          <div class= "prod-feature">
-            <p>Wirelesscharging</p>
-            <p>
-              Price: 1500Sr
-            </p>
-            <input type="button" value ="Add to cart" />
-          </div>
-        </div>
-      </div>
-    </div>
-    --->
+    
  <!--==footer==-->
   <div id="footer">
     <div class="container">
@@ -187,10 +104,35 @@
       </div>
     </div>
   </div>
+  
+  
+  
 
-  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="./js/jquery.bxslider.min.js"></script>
   <script src="./js/my.js"></script>
+  
+  <script>
+  <!--- Adding to Cart  --->
+  var CartData = [];
+  var products = <%- JSON.stringify(products) %>;
+    $(".cartbtn").click(function(event){
+      //console.log($(this)[0].id);
+      var index=$(this)[0].id;
+      var prod = products[index];
+      CartData.push(prod);
+      sessionStorage.setItem('CartData', JSON.stringify(CartData));
+      
+      console.log(prod);
+      console.log(CartData);
+      
+    
+    });
+    
+    
+    
+  </script>
+    
 </body>
 
 </html>

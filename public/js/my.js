@@ -1,3 +1,13 @@
+//session storage access
+var CartData = [];
+if(sessionStorage.getItem('CartData')){
+  CartData = JSON.parse(sessionStorage.getItem('CartData'));
+
+  //$("#name").val(userData.name);
+
+}
+
+
 $(document).ready(function(){
   $('.bxslider').bxSlider({
   mode: 'horizontal',
