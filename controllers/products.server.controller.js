@@ -65,6 +65,26 @@ exports.products = function(req, res){
   
 };
 
+exports.category = function(req, res){
+  Product.find({type: req.params.category},function(err, data) {
+    if (err) {
+      return res.status(400).send({
+
+  				message: errorHandler.getErrorMessage(err)
+  			});
+    } else {
+      console.log("api called");
+
+        res.render('./../public/views/Products.ejs', {
+          user: req.user || null,
+          request: req,
+          products: data
+        });
+    }
+  });
+  
+};
+
 
 
 

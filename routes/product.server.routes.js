@@ -23,6 +23,9 @@ app.route('/products')
  app.route('/api/products')
 	.get(products.list)
 	.post(users.requiresLogin, products.create);
+	
+app.route('/products/category/:category')
+	.get(products.category)
 
   app.route('/api/products/:productId')
 	.get(products.read)

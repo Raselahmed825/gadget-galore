@@ -26,11 +26,11 @@
         </div> <br>
         
         <div>Type:
-         <select class="dropbox">
+         <select id="type" class="dropbox">
               <option value="mobile">Mobile</option>
-              <option value="Laptop/Computer">Laptop/Computer</option>
-              <option value="Gaming">Gaming</option>
-              
+              <option value="pc">Laptop/Computer</option>
+              <option value="gaming">Gaming</option>
+        
         </select> 
             
         </div> <br>
@@ -62,8 +62,9 @@
                 product.name = $("#name").val();
             });
             
-            $("#type").change(function(){
-                product.type = $("#type").val();
+            $("#type").click(function(){
+                console.log($("#type:selected").text());
+                product.type = $("#type :selected").val();
             });
             
             $("#brand").change(function(){

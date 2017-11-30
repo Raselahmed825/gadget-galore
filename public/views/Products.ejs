@@ -40,9 +40,9 @@
     <div id="navigation">
       <a href="#" class="menu-togglr"><i class="fa fa-bars"></i> </a>
       <nav id="mainav">
-        <a href="/products">Mobile</a>
-        <a href="/products">Laptop/Computer</a>
-        <a href="/products">Gaming</a>
+        <a href="/products/category/mobile">Mobile</a>
+        <a href="/products/category/pc">Laptop/Computer</a>
+        <a href="/products/category/gaming">Gaming</a>
       </nav>
     </div>
 
@@ -56,7 +56,6 @@
       <% for(var i=0; i<products.length; i++) { %>
       <div class="prod-box">
         
-        <% if(products[i].type == "mobile") { %>
         
         <img src="<%= products[i].imageURL %>" alt="Airpods"   >
         <div class="prod-trans">
@@ -70,7 +69,6 @@
           </div>
         </div>
       </div>
-        <% } %>
       <% } %>
      
       <!--- fist product
