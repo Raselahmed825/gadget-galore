@@ -3,6 +3,12 @@ var Order = require('./../models/Order.js');
 var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
+exports.confirmation = function(req, res){
+  res.render('./../public/views/confirmation.ejs', {
+    user: req.user || null,
+    request: req
+  });
+};
 
 module.exports.list = function(req, res) {
   Order.find(function(err, data) {

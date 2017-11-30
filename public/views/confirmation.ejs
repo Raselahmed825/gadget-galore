@@ -56,10 +56,10 @@
             <input type="text" id="name"/>
         </div> <br>
         <div>Phone Number:
-            <input type="number" id="number"/>
+            <input type="number" id="contact" size=11/>
         </div> <br>
         <div>Address:
-            <textarea rows="4" cols="50" id="description"></textarea>
+            <textarea rows="4" cols="50" id="address"></textarea>
         </div>
         
         <br>
@@ -111,13 +111,55 @@
     </div>
   </div>
 
-  <script
-			  src="http://code.jquery.com/jquery-2.2.4.js"
-			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-			  crossorigin="anonymous">
-  </script>
-  <script src="js/jquery.bxslider.min.js"></script>
-  <script src="js/my.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="./js/jquery.bxslider.min.js"></script>
+  <script src="./js/my.js"></script>
+  
+  <script>
+            var order = {};
+            $("#name").change(function(){
+                order.name = $("#name").val();
+            });
+            
+            $("#contact").change(function(){
+                order.contact = $("#contact").val();
+            });
+            
+            $("#address").change(function(){
+                order.address = $("#address").val();
+            });
+            console.log(order);
+            
+            var OrderData = [];
+  
+            if(sessionStorage.getItem('CartData')){
+              OrderData = JSON.parse(sessionStorage.getItem('CartData'));
+            }
+            //console.log(OrderData);
+            
+            var sumPrice=0;
+            for(var i=0; i<OrderData.length; i++){
+              sumPrice=sumPrice+(OrderData[i].quantity * OrderData[i].price);
+            }
+            order.totalprice=sumPrice;
+            
+            order.products=OrderData;
+           
+            $("#submit").click(function(){
+                console.log(order);
+                $.ajax({
+                    method: "POST",
+                    url: "/api/orders",
+                    data: order
+                }).done(function(response){
+                    console.log(response);
+                    window.location.replace("/views/index);
+                }).fail(function(response){
+                    $("#error").text(JSON.parse(response.responseText).message);
+                    console.log(JSON.parse(response.responseText).message); 
+                });
+            });
+        </script>
 </body>
 
 </html>

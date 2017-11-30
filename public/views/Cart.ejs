@@ -52,8 +52,18 @@
     <h3>Items On Cart</h3>
     </div>
     <div class="prod-cc">
-
-      <!--- fist product--->
+      
+      <!--- cart products list --->
+    <script>
+      var CartFinal = [];
+      CartFinal = JSON.parse(sessionStorage.getItem('CartData'));
+      console.log(CartFinal);
+      console.log(CartFinal.length);
+    </script>
+    
+    
+    
+      <!--- fist product
 
       <div class="prod-lst">
           <img src="images/airpods1.jpg" alt="Airpods"  >
@@ -87,88 +97,11 @@
               <br />
               <input  class="button2"  type="button" value ="Remove " />
           </div>
-
         </div>
-
       </div>
 
-
-      <!-- Second Product -->
-
-      <div class="prod-lst">
-          <img src="images/case.jpg" alt="case"  >
-
-        <div id="detailsofitems">
-          <h5 >
-            Item Name: case
-          </h5>
-          <h5 >
-            Item Price: 150sr
-          </h5>
-
-          <h6 >
-            Description: Case for iPhone 6s
-          </h5>
-
-        </div>
-
-
-        <div class="prod-trans2">
-          <div class= "prod-feature2">
-
-            <h4>Remove Quantity: </h4>
-            <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-              </select>
-              <br />
-              <br />
-              <input  class="button2"  type="button" value ="Remove " />
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- third Product -->
-
-      <div class="prod-lst">
-          <img src="images/Wireless.jpg" alt="Wireless"  >
-
-        <div id="detailsofitems">
-          <h5 >
-            Item Name: Wireless Charger
-          </h5>
-          <h5 >
-            Item Price: 1500sr
-          </h5>
-          <h6 >
-            Description: Wireless charger for Samsung phones.
-          </h5>
-
-        </div>
-
-
-        <div class="prod-trans2">
-          <div class= "prod-feature2">
-
-            <h4>Remove Quantity: </h4>
-            <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-              </select>
-              <br />
-              <br />
-              <input class="button2" type="button" value ="Remove " />
-          </div>
-
-        </div>
-
-      </div>
+      --->
+    </div>
       <br>
 
 <!--CheckOut place-->
@@ -182,7 +115,7 @@
     </div>
     <div class="check">
     <a href="/confirmation"><button class="button" type="button"><span>Checkout</span></button></a>
-   <a href=""><button class="button" type="button">Cancel</button></a>
+   <a href="/index"><button class="button" type="button">Cancel</button></a>
 
     </div>
 
@@ -222,13 +155,9 @@
     </div>
   </div>
 
-  <script
-			  src="http://code.jquery.com/jquery-2.2.4.js"
-			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-			  crossorigin="anonymous">
-  </script>
-  <script src="js/jquery.bxslider.min.js"></script>
-  <script src="js/my.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="./js/jquery.bxslider.min.js"></script>
+  <script src="./js/my.js"></script>
 </body>
 
 </html>

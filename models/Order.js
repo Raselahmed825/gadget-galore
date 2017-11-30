@@ -9,11 +9,11 @@ var OrderSchema = {
     required: 'Name required'
   },
   
-  contactNO: {
+  contact: {
     type: Number,
     //default: '',
     trim: true,
-    required: 'contactNO required'
+    required: 'contact required'
   },
   
   address: {
@@ -22,13 +22,12 @@ var OrderSchema = {
     trim: true,
     required: 'address required'
   },
-  
-  mailID: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'mailID required'
+  totalprice: {
+    type: Number,
+    //default: '',
+    trim: true
   },
+  
   
   products: [],
 
