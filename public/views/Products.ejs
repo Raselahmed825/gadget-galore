@@ -114,16 +114,42 @@
   
   <script>
   <!--- Adding to Cart  --->
+  
   var CartData = [];
+  
+  if(sessionStorage.getItem('CartData')){
+    CartData = JSON.parse(sessionStorage.getItem('CartData'));
+  }
+  
   var products = <%- JSON.stringify(products) %>;
     $(".cartbtn").click(function(event){
       //console.log($(this)[0].id);
       var index=$(this)[0].id;
       var prod = products[index];
-      CartData.push(prod);
-      sessionStorage.setItem('CartData', JSON.stringify(CartData));
+      prod.quantity=1;
+      //console.log(prod);
+      var check2=false;
+      for(var i=0; i<CartData.length; i++){
+        if(prod == CartData[i]){
+          check2=true;
+          break;
+        }
+      }
       
-      console.log(prod);
+      if(check2==false){
+        CartData.push(prod);
+      }
+      
+      for(var i=0;i<CartData.length-1; i++){
+        for(var j=i+1; j<CartData.length; j++){
+          if(CartData[i]._id==CartData[j]._id){
+            CartData.splice(j,1);
+          }
+        }
+      }
+      
+      sessionStorage.setItem('CartData', JSON.stringify(CartData));
+     
       console.log(CartData);
       
     
