@@ -67,7 +67,7 @@
       <H3 id="price"></H3>
     </div>
     <div class="check">
-    <a href="/confirmation"><button class="button" type="button"><span>Checkout</span></button></a>
+    <a href="#"  id="chkout"><button class="button" type="button"><span>Checkout</span></button></a>
    <a href="/index"><button class="button" type="button">Cancel</button></a>
 
     </div>
@@ -81,6 +81,12 @@
 
 
 <script>
+      
+      if(sessionStorage.getItem('CartData') && (JSON.parse(sessionStorage.getItem('CartData'))).length > 0 ){
+        var a = document.getElementById('chkout');
+        a.href = "/confirmation";
+       }
+       
       var CartFinal = [];
       
        var sumPrice = 0;
@@ -149,8 +155,6 @@
        
         document.getElementById("price").innerHTML = 'Total Price: '+sumPrice;
        });
-       
-       
        
        
 
