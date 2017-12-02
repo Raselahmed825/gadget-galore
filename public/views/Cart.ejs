@@ -4,8 +4,6 @@
   <title>Gadget Galore</title>
   <link href="/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
   <link href="/css/fa/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet" type"text/css">
-  <link href="/css/media.css" rel="stylesheet">
 </head>
 
 <body>
@@ -51,56 +49,11 @@
     <div id= "heading-block">
     <h3>Items On Cart</h3>
     </div>
-    <div class="prod-cc">
+    <div class="prod-cc" id="cart-content">
       
       <!--- cart products list --->
-    <script>
-      var CartFinal = [];
-      CartFinal = JSON.parse(sessionStorage.getItem('CartData'));
-      console.log(CartFinal);
-      console.log(CartFinal.length);
-    </script>
     
-    
-    
-      <!--- fist product
-
-      <div class="prod-lst">
-          <img src="images/airpods1.jpg" alt="Airpods"  >
-
-        <div id="detailsofitems">
-          <h5 >
-            Item Name: Airpods
-          </h5>
-          <h5 >
-            Item Price: 900sr
-          </h5>
-
-          <h6 >
-            Description: Airpods of iPhone.
-          </h5>
-
-        </div>
-
-
-        <div class="prod-trans2">
-          <div class= "prod-feature2">
-
-            <h4>Remove Quantity: </h4>
-            <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-              </select>
-              <br />
-              <br />
-              <input  class="button2"  type="button" value ="Remove " />
-          </div>
-        </div>
-      </div>
-
-      --->
+    </div>
     </div>
       <br>
 
@@ -120,7 +73,51 @@
     </div>
 
     </div>
+    
+    
+      <script src="/lib/jquery/dist/jquery.min.js"></script>
+      <link href="/css/style.css" rel="stylesheet">
+      <link href="/css/media.css" rel="stylesheet">
 
+
+<script>
+      var CartFinal = [];
+       //console.log(CartFinal.length);
+       $( document ).ready(function() {
+
+        CartFinal = JSON.parse(sessionStorage.getItem('CartData'));
+        console.log(CartFinal);
+        for(var i=0; i<CartFinal.length; i++){
+  
+          var image ="<img src="+CartFinal[i].imageURL+" alt='Airpods'>";
+          var details ="<h5>Item Name:"+CartFinal[i].name+"</h5><h5>Item Price:"+CartFinal[i].price+"</h5><h6 >Description:"+CartFinal[i].description+"</h5>";
+         
+          var functionality="<div class='prod-trans2'><div class='prod-feature2'><h4>Remove Quantity:</h4><select>"+
+            "<option value='1'>1</option>"+
+            "<option value='2'>2</option>"+
+            "<option value='3'>3</option>"+
+            "<option value='4'>4</option>"+
+            "<option value='5'>5</option>"+
+            "</select>"+
+            "<br />"+
+              "<br />"+
+              "<input  class='button2'  type='button' value ='Remove ' /></div></div>"
+          var productList= "<div class='prod-lst'>"+image+"<div id='detailsofitems'>"+details+"</div>"+functionality+"</div>";
+          //$( ".prod-cc" ).append(productList);
+          if(i==1){
+            document.getElementById("cart-content").innerHTML = productList;
+          }else{
+            var newelement = document.getElementById("cart-content");
+            newelement.insertAdjacentHTML('afterend', productList);
+          }
+          
+          
+        }
+      
+      
+       });
+
+    </script> 
 
 
 <!------------------------>
@@ -155,7 +152,6 @@
     </div>
   </div>
 
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="./js/jquery.bxslider.min.js"></script>
   <script src="./js/my.js"></script>
 </body>
