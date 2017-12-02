@@ -64,7 +64,7 @@
 </div>
 <div id="prod-co">
     <div>
-      <H3>Total: 2550 Riyals</H3>
+      <H3 id="price"></H3>
     </div>
     <div class="check">
     <a href="/confirmation"><button class="button" type="button"><span>Checkout</span></button></a>
@@ -82,7 +82,36 @@
 
 <script>
       var CartFinal = [];
+      
+       var sumPrice = 0;
        //console.log(CartFinal.length);
+       function changeQuantity(index){
+         
+         CartFinal[index].quantity = document.getElementById("quantitySelect"+index).value;
+         
+         document.getElementById("quantityDisplay"+index).innerHTML = "Quantity:"+CartFinal[index].quantity ;
+         
+         sessionStorage.setItem('CartData', JSON.stringify(CartFinal));
+         sumTotalPrice();
+          //console.log(index);
+       }
+       
+       
+       function removeCartProduct(index){
+         CartFinal.splice(index,1);
+         //console.log(CartFinal);
+        sessionStorage.setItem('CartData', JSON.stringify(CartFinal));
+         window.location = "/cart";
+       }
+       
+       function sumTotalPrice(){
+          sumPrice=0;
+          for(var i=0; i<CartFinal.length; i++){
+            sumPrice = sumPrice+(CartFinal[i].price*CartFinal[i].quantity);
+          }
+         document.getElementById("price").innerHTML = 'Total Price: '+sumPrice;
+       }
+       
        $( document ).ready(function() {
 
         CartFinal = JSON.parse(sessionStorage.getItem('CartData'));
@@ -90,9 +119,9 @@
         for(var i=0; i<CartFinal.length; i++){
   
           var image ="<img src="+CartFinal[i].imageURL+" alt='Airpods'>";
-          var details ="<h5>Item Name:"+CartFinal[i].name+"</h5><h5>Item Price:"+CartFinal[i].price+"</h5><h6 >Description:"+CartFinal[i].description+"</h5>";
+          var details ="<h5>Item Name:"+CartFinal[i].name+"</h5><h5>Item Price:"+CartFinal[i].price+"</h5><h5 id='quantityDisplay"+i+"'>Quantity:"+CartFinal[i].quantity+"</h5><h6 >Description:"+CartFinal[i].description+"</h5>";
          
-          var functionality="<div class='prod-trans2'><div class='prod-feature2'><h4>Remove Quantity:</h4><select>"+
+          var functionality="<div class='prod-trans2'><div class='prod-feature2'><h4>Remove Quantity:</h4><select id='quantitySelect"+i+"' onchange='changeQuantity("+i+")'>"+
             "<option value='1'>1</option>"+
             "<option value='2'>2</option>"+
             "<option value='3'>3</option>"+
@@ -101,21 +130,29 @@
             "</select>"+
             "<br />"+
               "<br />"+
-              "<input  class='button2'  type='button' value ='Remove ' /></div></div>"
+              "<input class='button2'  type='button' onclick='removeCartProduct("+i+")' value ='Remove' /></div></div>"
           var productList= "<div class='prod-lst'>"+image+"<div id='detailsofitems'>"+details+"</div>"+functionality+"</div>";
           //$( ".prod-cc" ).append(productList);
-          if(i==1){
-            document.getElementById("cart-content").innerHTML = productList;
-          }else{
-            var newelement = document.getElementById("cart-content");
-            newelement.insertAdjacentHTML('afterend', productList);
-          }
+            if(i==1){
+              document.getElementById("cart-content").innerHTML = productList;
+            }else{
+              var newelement = document.getElementById("cart-content");
+              newelement.insertAdjacentHTML('afterend', productList);
+            }
+           console.log(CartFinal[i].price);
+           sumPrice = sumPrice+(CartFinal[i].price*CartFinal[i].quantity);
+        
           
-          
-        }
+            }
       
-      
+        console.log(sumPrice);
+       
+        document.getElementById("price").innerHTML = 'Total Price: '+sumPrice;
        });
+       
+       
+       
+       
 
     </script> 
 
